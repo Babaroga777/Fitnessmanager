@@ -5,57 +5,62 @@ public class MenueImpl implements Menue {
 
     int menueOption;
     Scanner scan = new Scanner(System.in);
-    Database db = new Database();
+    LogicController controller = new LogicController();
+
 
     @Override
     public void showMenue() {
 
-        System.out.println("1. Neues Mitglied anlegen");
-        System.out.println("2. Mitglied loeschen");
-        System.out.println("3. Einchecken Mitglied");
-        System.out.println("4. Mitglied auschecken");
-        System.out.println("5. Shop");
-        System.out.println("6. Liste aller Mitglieder");
-        System.out.println("7. Liste eingecheckter Mitglieder");
-        System.out.println("8. Programm beenden und Heim fahren");
-        try {
-            menueOption = scan.nextInt();
-            switch (menueOption) {
-                case 1:
-                    db.neuesMitglied();
-                    showMenue();
-                    break;
-                case 2:
-                     db.deleteMitglied();
-                     showMenue();
-                    break;
-                case 3:
-                    // db.einchecken();
-                    break;
-                case 4:
-                    // db.auschecken();
-                    break;
-                case 5:
-                    // db.buchenUmsatz();
-                    break;
-                case 6:
-                    db.getMitgliederListe();
-                    showMenue();
-                    break;
-                case 7:
-                    //  db.eingecheckteMitglieder();
-                    break;
-                case 8:
-                    System.out.println("Danke, fleißig warst");
-                    System.exit(1);
-                    break;
-                default:
-                    System.out.println("Bitte korrekte Option auswählen 1-8... du faggot");
-                    showMenue();
+
+        System.out.println("Willkommen im Fitnessmanager");
+        System.out.println("------------------------------");
+        System.out.println("Bitte geben sie das Passwort ein");
+
+        String passwort = scan.next();
+
+        if (passwort.equals("9999")) {
+
+            System.out.println("1. Neues Mitglied anlegen");
+            System.out.println("2. Mitglied loeschen");
+            System.out.println("3. Liste aller Mitglieder");
+            System.out.println("4. Programm beenden");
+            try {
+                menueOption = scan.nextInt();
+                switch (menueOption) {
+                    case 1:
+                        controller.neuesMitglied();
+                        showMenue();
+                        break;
+                    case 2:
+                        controller.deleteMitglied();
+                        showMenue();
+                        break;
+                    case 3:
+                        controller.getMitgliederListe();
+                        showMenue();
+                        break;
+                    case 4:
+                        System.out.println("Danke, fleißig warst");
+                        System.exit(1);
+                        break;
+                    default:
+                        System.out.println("Bitte korrekte Option auswählen 1-7");
+                        showMenue();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Bitte geben sie eine der genannten Optionen ein ---> keine Buchstaben");
             }
-        } catch (InputMismatchException e) {
-            System.out.println("Bitte geben sie eine der genannten Optionen ein ---> keine Buchstaben");
-            showMenue();
+        } else {
+            System.out.println("Passwort wurde falsch eingegebn > 1. Erneut eingeben < > 7. Programm beenden");
+            if (scan.nextLine().equals("1")) {
+                showMenue();
+            } else if (scan.nextLine().equals("7")) {
+                System.out.println("Programm wird auf wunsch des Users beendet");
+                System.exit(1);
+            } else {
+                System.out.println("Falsche eingabe");
+                showMenue();
+            }
         }
 
     }

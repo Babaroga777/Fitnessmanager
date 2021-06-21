@@ -68,7 +68,7 @@ public class LogicController {
     }
 
     public void getMitgliederListe() {
-        if(!stammDaten.isEmpty()) {
+        if (!stammDaten.isEmpty()) {
             stammDaten.forEach(System.out::println);
         } else {
             System.out.println("Keine Mitglieder in der Datenbank");
@@ -89,11 +89,6 @@ public class LogicController {
             }
         }
     }
-
-    public void createMA() {
-        Mitarbeiter ma = new Mitarbeiter("Herr", "Aleksandar", "Prekodravac", "Schlossergasse 14", "6060", "Hall in Tirol", "m", "MA-", "1234", "9999");
-    }
-
 }
 
 

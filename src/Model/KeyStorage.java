@@ -7,7 +7,6 @@ public class KeyStorage {
     HashMap<String, Integer> schliessfaecher = new HashMap<String, Integer>();
 
 
-
     public KeyStorage() {
     }
 

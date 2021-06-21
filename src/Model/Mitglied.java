@@ -47,9 +47,9 @@ public class Mitglied extends Person {
 
     @Override
     public String toString() {
-        return "Mitglied{" +
+        return "Mitglied" + '\n' +
                 ", schluesselnr=" + schluesselnr +
-                ", ID='" + ID + '\'' +
-                "} " + super.toString();
+                ", ID='" + ID + '\n' +
+                "} " + super.toString() + '\n';
     }
 }

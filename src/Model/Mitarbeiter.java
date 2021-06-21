@@ -4,7 +4,7 @@ public class Mitarbeiter extends Person{
 
     private String prefix = "MA";
     private String ID;
-    private String maPasswort = "9999";
+    private String maPasswort;
 
     public Mitarbeiter(String titel, String vorname, String nachname, String strasse, String plz, String ort, String geschlecht, String prefix, String ID, String maPasswort) {
         super(titel, vorname, nachname, strasse, plz, ort, geschlecht);

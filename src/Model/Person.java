@@ -81,14 +81,12 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "titel='" + titel + '\'' +
-                ", vorname='" + vorname + '\'' +
-                ", nachname='" + nachname + '\'' +
-                ", strasse='" + strasse + '\'' +
-                ", plz='" + plz + '\'' +
-                ", ort='" + ort + '\'' +
-                ", geschlecht='" + geschlecht + '\'' +
-                '}';
+        return "titel='" + titel + '\n' +
+                ", vorname='" + vorname + '\n' +
+                ", nachname='" + nachname + '\n' +
+                ", strasse='" + strasse + '\n' +
+                ", plz='" + plz + '\n' +
+                ", ort='" + ort + '\n' +
+                ", geschlecht='" + geschlecht + '\n';
     }
 }

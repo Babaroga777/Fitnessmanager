@@ -8,7 +8,7 @@ public class Mitglied extends Person {
     public String ID;
 
 
-    public Mitglied(String titel, String vorname, String nachname, String strasse, String plz, String ort, String geschlecht, boolean checkin, int schluesselnr, String idPrefix, String ID) {
+    public Mitglied(String titel, String vorname, String nachname, String strasse, String plz, String ort, String geschlecht, int schluesselnr, String idPrefix, String ID) {
         super(titel, vorname, nachname, strasse, plz, ort, geschlecht);
 
         this.schluesselnr = schluesselnr;
@@ -47,9 +47,11 @@ public class Mitglied extends Person {
 
     @Override
     public String toString() {
-        return "Mitglied" + '\n' +
-                ", schluesselnr=" + schluesselnr +
-                ", ID='" + ID + '\n' +
-                "} " + super.toString() + '\n';
+        return  "*************************" + '\n' +
+                "Mitglied" + '\n' +
+                "-------------------------" + '\n' +
+                "Schlüsselnr: " + schluesselnr + "   " +
+                "ID: " + ID + '\n'
+                + super.toString() + '\n';
     }
 }

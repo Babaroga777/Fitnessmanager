@@ -8,13 +8,14 @@ public class MenueImpl implements Menue {
     int menueOption;
     Scanner scan = new Scanner(System.in);
     LogicController controller = new LogicController();
-    Mitarbeiter ma = new Mitarbeiter("Herr", "Aleksandar", "Prekodravac", "Schlossergasse 14", "6060", "Hall in Tirol", "m", "MA-", "1234", "9999");
+    Mitarbeiter ma = new Mitarbeiter("Herr", "Max", "Muster", "Mustergasse 14", "6020", "Innsbruck", "m", "MA-", "1234", "9999");
 
     @Override
     public void checkUserPassword() {
 
-        System.out.println("Willkommen im Fitnessmanager");
-        System.out.println("------------------------------");
+        System.out.println("**********************************");
+        System.out.println("Willkommen im Fitnesszentermanager");
+        System.out.println("----------------------------------");
         System.out.println("Bitte geben sie das Passwort ein");
         String passwort = scan.nextLine();
 
@@ -39,10 +40,13 @@ public class MenueImpl implements Menue {
     @Override
     public void showMenue() {
 
+        System.out.println("-------------------------");
         System.out.println("1. Neues Mitglied anlegen");
         System.out.println("2. Mitglied loeschen");
         System.out.println("3. Liste aller Mitglieder");
         System.out.println("4. Programm beenden");
+        System.out.println("-------------------------");
+        System.out.print("Bitte 1 bis 4 eingeben: ");
         try {
             menueOption = scan.nextInt();
             switch (menueOption) {
@@ -51,7 +55,7 @@ public class MenueImpl implements Menue {
                     showMenue();
                     break;
                 case 2:
-                    controller.deleteMitglied();
+                    controller.mitgliedLoeschen();
                     showMenue();
                     break;
                 case 3:
@@ -59,7 +63,7 @@ public class MenueImpl implements Menue {
                     showMenue();
                     break;
                 case 4:
-                    System.out.println("Danke, fleißig warst");
+                    System.out.println("");
                     System.exit(1);
                     break;
                 default:
@@ -67,7 +71,7 @@ public class MenueImpl implements Menue {
                     showMenue();
             }
         } catch (InputMismatchException e) {
-            System.out.println("Bitte geben sie eine der genannten Optionen ein ---> keine Buchstaben");
+            System.out.println("Bitte geben sie eine der genannten Optionen ein ---> keine Buchstaben, das Programm wird beendet");
         }
     }
 }

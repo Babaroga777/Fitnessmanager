@@ -37,6 +37,7 @@ public class LogicController {
             neuesMitglied();
         }
 
+        System.out.println("--------------------------");
         System.out.println("Geben sie den Vornamen ein");
         mitglied.setVorname(scan.next());
 
@@ -75,17 +76,16 @@ public class LogicController {
         }
     }
 
-    public void deleteMitglied() {
+    public void mitgliedLoeschen() {
         System.out.println("Welches Mitglied soll aus der Liste entfernt werden");
         String userInput = scan.next();
         for (Iterator<Mitglied> iterator = stammDaten.iterator(); iterator.hasNext(); ) {
             Mitglied mitglied = iterator.next();
             if (mitglied.getID().equals("MI-" + userInput)) {
-                // Remove the current element from the iterator and the list.
                 iterator.remove();
                 System.out.println("Mitglied wurde gelöscht");
             } else {
-                System.out.println("Kein Mitglied mit der eingegebenen ID gefunden, bitte eingabe überprüfen!");
+                System.out.println("Kein Mitglied mit der eingegebenen ID gefunden, bitte Eingabe überprüfen!");
             }
         }
     }

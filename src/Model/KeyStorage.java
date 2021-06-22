@@ -20,8 +20,8 @@ public class KeyStorage {
 
     @Override
     public String toString() {
-        return "KeyStorage{" +
-                "schliessfaecher=" + schliessfaecher +
-                '}';
+        return "KeyStorage" +
+                "Schliessfaecher: " + schliessfaecher +
+                " ";
     }
 }
